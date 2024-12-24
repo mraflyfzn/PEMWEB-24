@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pembelian Tiket</title>
+    <style>
+        body {
+            background-color: brown;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 500px;
+            margin: auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align: center;">Form Pembelian Tiket</h2>
+
+<form id="ticketForm">
+    <div class="form-group">
+        <label for="fullName">Nama Lengkap</label>
+        <input type="text" id="fullName" name="fullName" required>
+        <span class="error" id="fullNameError"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error" id="emailError"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="phone">Nomor Telepon</label>
+        <input type="tel" id="phone" name="phone" required>
+        <span class="error" id="phoneError"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="ticketQuantity">Jumlah Tiket</label>
+        <input type="number" id="ticketQuantity" name="ticketQuantity" min="1" required>
+        <span class="error" id="quantityError"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="bank">Bank</label>
+        <select id="bank" name="bank" required>
+            <option value="">-- Pilih Bank --</option>
+            <option value="BCA">BCA</option>
+            <option value="Mandiri">Mandiri</option>
+            <option value="BNI">BNI</option>
+        </select>
+        <span class="error" id="bankError"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="departureCity">Kota Keberangkatan</label>
+        <select id="departureCity" name="departureCity" required>
+            <option value="">-- Pilih Kota --</option>
+            <option value="Jakarta">Jakarta</option>
+            <option value="Bandung">Bandung</option>
+            <option value="Jogja">Jogja</option>
+        </select>
+        <span class="error" id="departureCityError"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="departureDate">Jadwal Keberangkatan</label>
+        <input type="date" id="departureDate" name="departureDate" required>
+        <span class="error" id="departureDateError"></span>
+    </div>
+
+    <button type="submit">Pesan Tiket</button>
+</form>
+
+<div class="output" id="output"></div>
+
+<script>
+    document.getElementById('ticketForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Mencegah pengiriman form default
+
+        // Mengambil nilai input
+        const fullName = document.getElementById('fullName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const ticketQuantity = document.getElementById('ticketQuantity').value;
+        const bank = document.getElementById('bank').value;
+        const departureCity = document.getElementById('departureCity').value;
+        const departureDate = document.getElementById('departureDate').value;
+
+        // Reset pesan error
+        document.getElementById('fullNameError').textContent = '';
+        document.getElementById('emailError').textContent = '';
+        document.getElementById('phoneError').textContent = '';
+        document.getElementById('quantityError').textContent = '';
+        document.getElementById('bankError').textContent = '';
+        document.getElementById('departureCityError').textContent = '';
+        document.getElementById('departureDateError').textContent = '';
+
+        let isValid = true;
+
+        // Validasi Nama Lengkap
+        if (fullName === '') {
+            document.getElementById('fullNameError').textContent = 'Nama lengkap wajib diisi';
+            isValid = false;
+        }
+
+        // Validasi Email
+        if (email === '') {
+            document.getElementById('emailError').textContent = 'Email wajib diisi';
+            isValid = false;
+        }
+
+        // Validasi Nomor Telepon
+        if (phone === '') {
+            document.getElementById('phoneError').textContent = 'Nomor telepon wajib diisi';
+            isValid = false;
+        }
+
+        // Validasi Jumlah Tiket
+        if (ticketQuantity === '' || ticketQuantity <= 0) {
+            document.getElementById('quantityError').textContent = 'Jumlah tiket harus lebih dari 0';
+            isValid = false;
+        }
+
+        // Validasi Bank
+        if (bank === '') {
+            document.getElementById('bankError').textContent = 'Silakan pilih bank';
+            isValid = false;
+        }
+
+        // Validasi Kota Keberangkatan
+        if (departureCity === '') {
+            document.getElementById('departureCityError').textContent = 'Kota keberangkatan wajib dipilih';
+            isValid = false;
+        }
+
+        // Validasi Jadwal Keberangkatan
+        if (departureDate === '') {
+            document.getElementById('departureDateError').textContent = 'Jadwal keberangkatan wajib diisi';
+            isValid = false;
+        }
+
+        // Jika validasi lolos, tampilkan output
+        if (isValid) {
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = `
+                <h3>Detail Pembelian Tiket</h3>
+                <p><strong>Nama Lengkap:</strong> ${fullName}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Nomor Telepon:</strong> ${phone}</p>
+                <p><strong>Jumlah Tiket:</strong> ${ticketQuantity}</p>
+                <p><strong>Bank:</strong> ${bank}</p>
+                <p><strong>Kota Keberangkatan:</strong> ${departureCity}</p>
+                <p><strong>Jadwal Keberangkatan:</strong> ${departureDate}</p>
+            `;
+        }
+    });
+</script>
+
+</body>
+</html>

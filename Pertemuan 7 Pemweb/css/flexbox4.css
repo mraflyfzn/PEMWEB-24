@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  header, article, aside, nav, footer{
+    padding: 1rem;
+  }
+  
+  body {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+  }
+  
+  header,footer {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width:190vh;
+    height: 10vh;
+    background-color: rgb(160, 68, 68);
+  }
+  
+  .container {
+    display: flex;
+    flex-grow: 2;
+  
+  }
+  
+  aside {
+  background-color: rgb(95, 54, 25);
+  width: 40vh;
+  margin-top: 95px;
+  height: 68vh;
+  margin-left: 20px;
+  }
+  
+  article{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: rgb(181, 116, 30);
+    margin-left: 30px;
+    width: 145vh;
+    height: 68vh;
+    margin: 100px
+    
+  }
+  
+  img{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 70%;
+    margin: 200px;
+    justify-content: space-around;
+
+  }

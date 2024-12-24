@@ -1,0 +1,5 @@
+/* CSS untuk cssbox2.html */
+.container {
+    display: flex;
+    justify-content: center;
+}

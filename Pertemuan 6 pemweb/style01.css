@@ -1,0 +1,52 @@
+.box-1 {
+    width: 99%;
+    height: 200px;
+    background-color: greenyellow;
+    border: solid black;
+    margin-right: -1px;
+}
+
+.box-2 {
+    display: flex;
+    margin-top: 30px;
+}
+
+.gold {
+    width: 400px;
+    height: 250px;
+    background-color: gold;
+    border: solid black;
+    margin-right: -50px;
+}
+
+.red {
+    width: 99%;
+    height: 250px;
+    background-color: red;
+    margin-left: 5%;
+    margin-right: 8px;
+    border: solid black;
+}
+
+
+.box-3 {
+    display: flex;
+    margin-top: 30px;
+}
+
+.gold0 {
+    width: 400px;
+    height: 250px;
+    background-color: goldenrod;
+    border: solid black;
+    margin-right: -50px;
+}
+
+.blue {
+    width: 99%;
+    height: 250px;
+    background-color: blue;
+    margin-left: 5%;
+    margin-right: -10px;
+    border: solid black;
+}

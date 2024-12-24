@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Legenda</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Hotel Legenda</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Beranda</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#about">Tentang Kami</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#branches">Cabang</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#promotions">Promosi</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="img/lobby.jpg" class="d-block w-100" alt="">
+        </div>
+        <div class="carousel-item">
+            <img src="img/Aula hotel.jpg". class="d-block w-100" alt="">
+        </div>
+        <div class="carousel-item">
+            <img src="img/Kamar hotel.jpg" class="d-block w-100" alt="">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Sebelumnya</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Selanjutnya</span>
+    </a>
+</div>
+
+<div class="container mt-5">
+    <h2 id="about">Tentang Kami</h2>
+    <p>Hotel Permata adalah tempat yang sempurna untuk menginap dengan layanan terbaik dan fasilitas lengkap. Di hotel permata ini,tempat ideal untuk istirahat setelah hari panjang, di mana setiap detik kamu dirawat dengan hati. Dan kami pun telah memiliki beberapa cabang di kota kota besar. Tunggu apa lagi? mari menginap di hotel Permata.</p>
+
+    <section id="branches" class="mt-5">
+        <h2>Cabang Kami</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="img/gallery 12.jpeg" height="150px">
+                        <h5 class="card-title">Cabang Jakarta</h5>
+                        <p class="card-text">Lokasi strategis di pusat kota.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="img/gallery 2.jpeg" height="150px">
+                        <h5 class="card-title">Cabang Bali</h5>
+                        <p class="card-text">Dekat dengan pantai dan tempat wisata.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="img/gallery 12.jpeg" height="150px">
+                        <h5 class="card-title">Cabang Yogyakarta</h5>
+                        <p class="card-text">Dekat dengan candi dan budaya lokal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <h3>Form Pemesanan</h3>
+    <form action="#" method="post">
+        <div class="form-group">
+            <label for="name">Nama:</label>
+            <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Kirim</button>
+    </form>
+    <br>
+
+    <h3 id="promotions">Tabel Promosi</h3>
+    <table class="table table-bordered mt-3">
+        <thead>
+            <tr>
+                <th>Paket</th>
+                <th>Harga</th>
+                <th>Waktu</th>
+                <th>Syarat & Ketentuan</th>
+                <th>Deskripsi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Paket Hemat</td>
+                <td>Rp 500.000</td>
+                <td>1 Malam</td>
+                <td>Reservasi 1 minggu sebelumnya</td>
+                <td>Mendapatkan sarapan gratis. Dan pijat releksi</td>
+            </tr>
+    </table>  
+</div>
+<footer class="py-3 bg-dark text-white text-center">
+    <p>&copy; 2024 Hotel Legenda. Hak cipta dilindungi.</p>
+  </footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
